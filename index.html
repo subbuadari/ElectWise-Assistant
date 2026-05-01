@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://generativelanguage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com;" />
+  <title>ElectWise — Your Election Guide</title>
+  <meta name="description" content="Understand the election process, timelines, and steps in an interactive and easy-to-follow way with ElectWise." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Google tag (gtag.js) Placeholder -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- DECORATIVE BACKGROUND WATERMARKS TO FILL EMPTY SIDES -->
+  <div class="watermark-container">
+    <span class="material-icons watermark left-1">how_to_vote</span>
+    <span class="material-icons watermark left-2">fact_check</span>
+    <span class="material-icons watermark right-1">campaign</span>
+    <span class="material-icons watermark right-2">account_balance</span>
+  </div>
+
+  <!-- Background particles -->
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon" aria-hidden="true">🗳️</span>
+        <span class="logo-text">Elect<span class="accent">Wise</span></span>
+      </div>
+      <nav class="nav" role="navigation" aria-label="Main Navigation">
+        <button class="nav-btn active" data-section="home" aria-label="Go to Home section">Home</button>
+        <button class="nav-btn" data-section="timeline" aria-label="Go to Timeline section">Timeline</button>
+        <button class="nav-btn" data-section="steps" aria-label="Go to Steps section">Steps</button>
+        <button class="nav-btn" data-section="faq" aria-label="Go to FAQ section">FAQ</button>
+        <button class="nav-btn" data-section="assistant" aria-label="Go to AI Assistant section">Ask AI</button>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main" id="main-content" role="main">
+
+    <!-- HOME SECTION -->
+    <section class="section active" id="home">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="hero-badge">🇺🇸 Your Democratic Guide</div>
+          <h1 class="hero-title">Understand How<br/><span class="gradient-text">Elections Work</span></h1>
+          <p class="hero-subtitle">Navigate the full election process — from voter registration to final results — with clear, step-by-step guidance.</p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="navigateTo('timeline')">Explore Timeline →</button>
+            <button class="btn-secondary" onclick="navigateTo('assistant')">Ask a Question</button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-num">6</span>
+              <span class="stat-label">Key Phases</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">30+</span>
+              <span class="stat-label">Steps Covered</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">24/7</span>
+              <span class="stat-label">AI Assistant</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <img src="hero-banner.png" alt="Citizens participating in the democratic process" class="hero-image" />
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <div class="feature-card" onclick="navigateTo('timeline')">
+          <div class="card-icon">📅</div>
+          <h3>Election Timeline</h3>
+          <p>See the full chronological roadmap from campaign kickoff to certification of results.</p>
+          <span class="card-link">Explore →</span>
+        </div>
+        <div class="feature-card" onclick="navigateTo('steps')">
+          <div class="card-icon">📋</div>
+          <h3>Step-by-Step Guide</h3>
+          <p>Detailed breakdown of every phase: registration, primaries, general election, and more.</p>
+          <span class="card-link">Learn More →</span>
+        </div>
+        <div class="feature-card" onclick="navigateTo('faq')">
+          <div class="card-icon">❓</div>
+          <h3>Common Questions</h3>
+          <p>Answers to the most frequently asked questions about voting and elections.</p>
+          <span class="card-link">View FAQ →</span>
+        </div>
+        <div class="feature-card" onclick="navigateTo('assistant')">
+          <div class="card-icon">🤖</div>
+          <h3>AI Assistant</h3>
+          <p>Chat with our election expert bot for instant, personalized answers to your questions.</p>
+          <span class="card-link">Chat Now →</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="section" id="timeline">
+      <div class="section-header">
+        <h2>Election <span class="gradient-text">Timeline</span></h2>
+        <p>The U.S. Presidential Election cycle spans roughly 2 years. Here's how it unfolds.</p>
+      </div>
+      <div class="timeline-container">
+        <div class="timeline-track"></div>
+
+        <div class="timeline-item" data-phase="1">
+          <div class="timeline-dot phase-1"></div>
+          <div class="timeline-card" data-phase-num="1">
+            <div class="phase-badge">Phase 1</div>
+            <h3>🏛️ Campaign Announcement</h3>
+            <div class="timeline-date">~18–24 Months Before Election</div>
+            <p>Candidates officially declare their intent to run and begin building campaign teams, raising funds, and touring early primary states.</p>
+            <ul>
+              <li>File candidacy with the FEC</li>
+              <li>Build campaign infrastructure</li>
+              <li>Begin fundraising</li>
+              <li>Hire campaign staff</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item right" data-phase="2">
+          <div class="timeline-dot phase-2"></div>
+          <div class="timeline-card" data-phase-num="2">
+            <div class="phase-badge">Phase 2</div>
+            <h3>🗳️ Primary Season</h3>
+            <div class="timeline-date">January – June (Election Year)</div>
+            <p>Each party holds primary elections and caucuses in all 50 states to select their presidential nominee.</p>
+            <ul>
+              <li>Iowa Caucuses (traditionally first)</li>
+              <li>New Hampshire Primary</li>
+              <li>Super Tuesday (many states vote)</li>
+              <li>Delegate accumulation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-phase="3">
+          <div class="timeline-dot phase-3"></div>
+          <div class="timeline-card" data-phase-num="3">
+            <div class="phase-badge">Phase 3</div>
+            <h3>🎉 National Conventions</h3>
+            <div class="timeline-date">July – September (Election Year)</div>
+            <p>Each major party holds a national convention where delegates formally nominate their presidential and vice-presidential candidates.</p>
+            <ul>
+              <li>Delegate roll call vote</li>
+              <li>VP nominee announcement</li>
+              <li>Platform adoption</li>
+              <li>Acceptance speeches</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item right" data-phase="4">
+          <div class="timeline-dot phase-4"></div>
+          <div class="timeline-card" data-phase-num="4">
+            <div class="phase-badge">Phase 4</div>
+            <h3>⚔️ General Election Campaign</h3>
+            <div class="timeline-date">September – November</div>
+            <p>Nominated candidates compete head-to-head with rallies, debates, and ads targeting swing states.</p>
+            <ul>
+              <li>Presidential debates (3 rounds)</li>
+              <li>VP debate</li>
+              <li>Swing-state campaigning</li>
+              <li>Early voting begins</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-phase="5">
+          <div class="timeline-dot phase-5"></div>
+          <div class="timeline-card" data-phase-num="5">
+            <div class="phase-badge">Phase 5</div>
+            <h3>📬 Election Day</h3>
+            <div class="timeline-date">First Tuesday after First Monday in November</div>
+            <p>Citizens cast their votes in person or by mail. Results are reported throughout the night.</p>
+            <ul>
+              <li>Polls open 6AM–8PM (varies by state)</li>
+              <li>In-person & mail-in ballots counted</li>
+              <li>Media projections begin</li>
+              <li>Electoral vote totals tracked</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item right" data-phase="6">
+          <div class="timeline-dot phase-6"></div>
+          <div class="timeline-card" data-phase-num="6">
+            <div class="phase-badge">Phase 6</div>
+            <h3>🏆 Certification & Inauguration</h3>
+            <div class="timeline-date">November – January 20</div>
+            <p>The Electoral College meets, Congress certifies results, and the new president is inaugurated.</p>
+            <ul>
+              <li>Electoral College meets (December)</li>
+              <li>Congress certifies results (Jan 6)</li>
+              <li>Inauguration Day (Jan 20)</li>
+              <li>New administration begins</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEPS SECTION -->
+    <section class="section" id="steps">
+      <div class="section-header">
+        <h2>Step-by-Step <span class="gradient-text">Voter Guide</span></h2>
+        <p>Everything you need to know to participate in an election from start to finish.</p>
+      </div>
+
+      <div class="steps-tabs">
+        <button class="step-tab active" data-target="register">Registration</button>
+        <button class="step-tab" data-target="prepare">Preparation</button>
+        <button class="step-tab" data-target="vote">Voting Day</button>
+        <button class="step-tab" data-target="after">After Voting</button>
+      </div>
+
+      <div class="steps-content active" id="register">
+        <div class="steps-grid-wrapper">
+          <div class="steps-illustration">
+            <span class="material-icons illustration-icon">how_to_reg</span>
+            <h3>Registration</h3>
+            <p>Your first step towards exercising your civic duty.</p>
+          </div>
+          <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Check Eligibility</h4>
+              <p>Confirm you are a U.S. citizen, at least 18 years old on Election Day, and meet your state's residency requirements.</p>
+              <div class="step-tip">💡 Some states allow 17-year-olds to vote in primaries if they'll be 18 by the general election.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Register to Vote</h4>
+              <p>Register online at vote.gov, by mail, or in person at your local election office. Deadlines vary by state (15–30 days before election).</p>
+              <div class="step-tip">💡 North Dakota is the only state with no voter registration requirement.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Verify Your Registration</h4>
+              <p>Confirm your registration status online through your state's election website. Update your address if you've moved.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Receive Voter Card</h4>
+              <p>After registering, you'll receive a voter registration card with your polling location address and precinct number.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-content" id="prepare">
+        <div class="steps-grid-wrapper">
+          <div class="steps-illustration">
+            <span class="material-icons illustration-icon">fact_check</span>
+            <h3>Preparation</h3>
+            <p>Knowledge is power. Learn about the candidates and your polling place.</p>
+          </div>
+          <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Research Candidates & Issues</h4>
+              <p>Review candidate positions, endorsements, and voting records. Study ballot measures using non-partisan voter guides.</p>
+              <div class="step-tip">💡 Visit ballotpedia.org for non-partisan candidate info and full ballot text.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Find Your Polling Place</h4>
+              <p>Look up your polling location at vote.gov using your registered address. Polling places can change between elections.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Check ID Requirements</h4>
+              <p>Many states require photo ID. Check your state's specific requirements at least a week before Election Day.</p>
+              <div class="step-tip">💡 35 states have some form of voter ID law. Requirements vary widely.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Consider Early Voting or Mail-In</h4>
+              <p>Most states offer early voting (1–45 days before), and many allow no-excuse absentee/mail-in voting.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-content" id="vote">
+        <div class="steps-grid-wrapper">
+          <div class="steps-illustration">
+            <span class="material-icons illustration-icon">how_to_vote</span>
+            <h3>Voting Day</h3>
+            <p>Make your voice heard. Cast your official ballot.</p>
+          </div>
+          <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Go to Your Polling Place</h4>
+              <p>Arrive with your voter registration card and any required ID. Polls typically open at 6–7 AM and close at 7–8 PM.</p>
+              <div class="step-tip">💡 If you're in line when polls close, you have the right to vote — stay in line!</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Check In at the Poll</h4>
+              <p>A poll worker will find your name on the registered voter list and verify your identity per state requirements.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Cast Your Ballot</h4>
+              <p>You'll be given a ballot (paper or electronic). Read all instructions carefully. Vote for all races you choose.</p>
+              <div class="step-tip">💡 You don't have to vote in every race on the ballot — "undervoting" is allowed.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Submit & Get Your Sticker</h4>
+              <p>Feed your ballot into the scanner (or hand it to a poll worker) and receive your "I Voted" sticker!</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-content" id="after">
+        <div class="steps-grid-wrapper">
+          <div class="steps-illustration">
+            <span class="material-icons illustration-icon">verified</span>
+            <h3>After Voting</h3>
+            <p>Track results and witness the peaceful transfer of power.</p>
+          </div>
+          <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Track Your Mail Ballot (if applicable)</h4>
+              <p>Many states let you track whether your mail-in ballot was received and counted using your state's ballot tracker.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Watch Election Results</h4>
+              <p>Results come in throughout election night and may take days for final counts in close races.</p>
+              <div class="step-tip">💡 Media "calls" are projections, not official results. Official certification takes weeks.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Official Certification</h4>
+              <p>State election officials certify results after reviewing all ballots, including provisional and late mail-in ballots.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Electoral College Vote</h4>
+              <p>In December, each state's electors cast official electoral votes. Congress certifies this count on January 6.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section" id="faq">
+      <div class="section-header">
+        <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p>Quick answers to common questions about the U.S. election process.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">Who is eligible to vote in U.S. elections? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>To vote in federal elections, you must be a U.S. citizen, at least 18 years old on or before Election Day, and registered to vote in your state. Some states have additional requirements. Felons may or may not be eligible depending on their state.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is the Electoral College? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>The Electoral College is the system used to elect the President and Vice President. Each state receives a number of electors equal to its total Congressional representation (House + Senate). There are 538 total electoral votes, and a candidate needs 270 to win. In 48 states, the winner-take-all rule applies.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is the difference between a primary and a general election? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>A primary election is held within each party to select their candidate (nominee) for the general election. The general election is the final election where all party nominees compete for the office. Primaries can be "open" (any voter can participate) or "closed" (only registered party members).</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can I vote by mail? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Many states allow voting by mail, also called absentee voting. Some states send ballots to all registered voters automatically. Others require you to request a mail-in ballot. Deadlines for requesting and returning mail ballots vary — check your state's election website for specifics.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is a caucus vs. a primary? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>A primary is a straightforward secret ballot vote held at polling places. A caucus is a public gathering where voters physically group themselves by candidate preference and discuss choices. Caucuses are more time-intensive and interactive. Most states use primaries; Iowa was famous for its caucuses until recently.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does it take to count all the votes? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>It depends on the state and the volume of mail-in ballots. Some states count mail ballots before Election Day; others can't start until polls close. In close races or high-volume states (like California), final counts can take days or even weeks. The media's "calling" a race is a projection, not an official result.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is gerrymandering? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Gerrymandering is the manipulation of electoral district boundaries to favor one political party over another. It's done by state legislatures after each Census. "Packing" concentrates opposing voters into few districts; "cracking" splits them across many districts. It primarily affects House of Representatives races.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What happens if there's a tie in the Electoral College? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>If no candidate reaches 270 electoral votes (e.g., a 269–269 tie), the election goes to the House of Representatives, which chooses the President (each state delegation gets one vote). The Senate then chooses the Vice President from the top two VP candidates.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do I need a photo ID to vote? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Voter ID laws vary significantly by state. Some states strictly require a government-issued photo ID (like a driver's license or passport), others accept non-photo IDs (like utility bills), and some do not require an ID at all if you sign an affidavit. Always check your state's specific ID requirements before heading to the polls.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is a swing state or battleground state? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>A swing state (or battleground state) is a state where both major political parties have similar levels of support among voters, meaning that either candidate has a reasonable chance of winning the state's electoral votes. Because most states reliably vote for one party, presidential campaigns focus almost all their time and advertising money on these few swing states.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is a provisional ballot? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>A provisional ballot is used to record a vote when there are questions about a given voter's eligibility that must be resolved before the vote can count. For example, if your name is not on the voter roll at your polling place, or if you forgot your required ID, you can cast a provisional ballot. Officials will verify your eligibility after Election Day before counting it.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can third-party candidates win the presidency? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>While theoretically possible, it is extremely difficult for third-party or independent candidates to win due to the Electoral College's winner-take-all system and ballot access laws. However, third-party candidates often influence elections by drawing votes away from major party candidates (the "spoiler effect") or bringing niche issues to the national debate stage.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSISTANT SECTION -->
+    <section class="section" id="assistant">
+      <div class="section-header">
+        <h2>AI Election <span class="gradient-text">Assistant</span></h2>
+        <p>Ask anything about elections, voting, or the democratic process.</p>
+      </div>
+      <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+          <div class="msg bot">
+            <div class="msg-avatar">🤖</div>
+            <div class="msg-bubble">
+              <p>Hello! I'm your ElectWise AI assistant. Ask me anything about:</p>
+              <ul>
+                <li>🗳️ How to register and vote</li>
+                <li>📅 Election timelines and dates</li>
+                <li>🏛️ How the Electoral College works</li>
+                <li>📋 Primary vs. general elections</li>
+                <li>❓ Any other election questions!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="chat-suggestions">
+          <button class="suggestion-chip" onclick="sendSuggestion(this)">How do I register to vote?</button>
+          <button class="suggestion-chip" onclick="sendSuggestion(this)">What is the Electoral College?</button>
+          <button class="suggestion-chip" onclick="sendSuggestion(this)">When is Election Day?</button>
+          <button class="suggestion-chip" onclick="sendSuggestion(this)">Can I vote by mail?</button>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Ask your election question..." />
+          <button class="chat-send" id="sendBtn" onclick="sendMessage()">Send ✉️</button>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="logo-text">Elect<span class="accent">Wise</span></span>
+      <p>An educational tool for understanding the democratic process. Not affiliated with any government body or political party.</p>
+      <p style="opacity:0.4; font-size:0.75rem; margin-top:0.5rem;">© 2026 ElectWise. Educational use only.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>
